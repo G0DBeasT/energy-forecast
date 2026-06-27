@@ -1,0 +1,11 @@
+.venv/
+data/raw/
+mlruns/
+.env
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+*.parquet
+
+
