@@ -1,16 +1,19 @@
-.PHONY: data features train forecast dashboard
+.PHONY: data features train forecast dashboard clean
 
 data:
-	python src/data.py
+	PYTHONPATH=. python src/data.py
 
 features:
-	python src/features.py
+	PYTHONPATH=. python src/features.py
 
 train:
-	python src/train.py
+	PYTHONPATH=. python src/train.py
 
 forecast:
-	python src/forecast.py
+	PYTHONPATH=. python src/forecast.py
 
 dashboard:
 	streamlit run app.py
+
+clean:
+	rm -rf data/processed/*.parquet data/processed/*.csv data/processed/*.pkl mlruns mlflow.db

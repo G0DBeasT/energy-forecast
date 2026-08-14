@@ -11,3 +11,9 @@ FREQ             = "1h"
 FORECAST_HORIZON = 48
 MLFLOW_URI       = "http://localhost:5000"
 EXPERIMENT_NAME  = "energy-forecast"
+
+# Weather API / Location Config (e.g. New Delhi region)
+LATITUDE         = 28.6139
+LONGITUDE        = 77.2090
+TEMP_COL         = "temp_c"
+HUMIDITY_COL     = "relative_humidity"
