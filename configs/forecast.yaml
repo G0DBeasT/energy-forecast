@@ -1,0 +1,31 @@
+# Multi-Horizon Forecasting Configuration
+
+horizons:
+  next_day:
+    hours: 24
+    resolution: "1h"
+    description: "Operational dispatch & day-ahead unit commitment"
+    model_type: "hourly"
+    base_sigma_mw: 130.0
+
+  next_week:
+    hours: 168
+    days: 7
+    resolution: "1h"
+    aggregation: "1D"
+    description: "Weekly reserve planning & maintenance scheduling"
+    model_type: "hourly_aggregated"
+    base_sigma_mw: 145.0
+
+  next_month:
+    hours: 720
+    days: 30
+    resolution: "1D"
+    description: "Long-range resource budgeting & climatology integration"
+    model_type: "dedicated_daily"
+    base_sigma_mw: 110.0
+
+uncertainty:
+  confidence_levels: [0.80, 0.90, 0.95]
+  lead_time_growth_alpha: 0.45
+  growth_power_gamma: 0.65

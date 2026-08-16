@@ -1,0 +1,35 @@
+# Default System Configuration for Energy Grid Load Forecasting
+
+project:
+  name: "energy-forecast"
+  version: "2.0.0"
+  description: "Production Multi-Horizon Energy Demand Forecasting System"
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  models_dir: "models"
+  reports_dir: "reports"
+  mlflow_db: "sqlite:///mlflow.db"
+
+location:
+  name: "New Delhi Grid Region"
+  latitude: 28.6139
+  longitude: 77.2090
+  timezone: "Asia/Kolkata"
+  country_holiday_code: "IN"
+  base_temp_c: 18.33
+
+data_cleaning:
+  freq: "1h"
+  clip_lower_quantile: 0.001
+  clip_upper_quantile: 0.999
+  ffill_limit: 4
+
+synthetic_generation:
+  start_date: "2021-01-01"
+  end_date: "2024-06-30"
+  base_load_mw: 4500.0
+  trend_growth_mw: 800.0
+  noise_std_mw: 120.0
+  random_seed: 42

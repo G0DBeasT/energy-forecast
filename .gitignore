@@ -1,11 +1,29 @@
+# Python & Environment
 .venv/
-data/raw/
-mlruns/
-.env
+env/
+venv/
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook Checkpoints
 .ipynb_checkpoints/
-*.parquet
 
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
 
+# MLflow & Local DB
+mlruns/
+mlflow.db
+
+# Environment variables
+.env
+.env.local
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
